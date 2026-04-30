@@ -87,5 +87,54 @@ cd frontend
 npm install
 npm run dev
 
+## 🚀 Deployment
+
+This project is deployed using:
+
+- **Frontend:** Vercel  
+- **Backend:** Render  
+
+---
+
+### 🔧 Backend Deployment (Render)
+
+1. Push your code to GitHub
+
+2. Go to https://render.com  
+3. Click **New → Web Service**  
+4. Connect your GitHub repository  
+
+5. Configure:
+   - **Environment:** Node  
+   - **Root Directory:** backend  
+   - **Build Command:** `npm install`  
+   - **Start Command:** `npm start`  
+
+6. Add Environment Variables:
+   MONGO_URI=your_mongodb_connection_string
+   JWT_SECRET=your_secret_key
+
+7. Click **Deploy**
+
+👉 After deployment, you will get a backend URL like:
+ https://team-task-manager-fkkt.onrender.com
+
+ 
+---
+
+### 🌐 Frontend Deployment (Vercel)
+
+1. Go to https://vercel.com  
+2. Import your GitHub repository  
+3. Select the **frontend** folder  
+
+4. Before deploying, update API URL:
+
+📄 `src/api/axios.js`
+
+baseURL: "https://team-task-manager-fkkt.onrender.com/api"
+
+Click Deploy
+
 Author
 Aman Dwivedi
